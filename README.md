@@ -1,2 +1,2 @@
 # PracticalTrainingPN
-Hello world
+print:Hello world
