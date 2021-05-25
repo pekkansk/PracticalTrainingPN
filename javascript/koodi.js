@@ -12,7 +12,7 @@ var taulukonkuvat = ["https://i.ytimg.com/vi/hU_dcC3pvcU/maxresdefault.jpg",
 var len_kuvat = taulukonkuvat.length
 
 for(i = 0; i < len_kuvat; i++) {
-	var taulukonsisältö = "<img src=" + taulukonkuvat[i] + ">"
+	var taulukonsisältö = "<img src=" + taulukonkuvat[2] + ">"
 }
 
 // Otsikon ja leipätekstin sisältö
@@ -52,8 +52,9 @@ function kuvat() {
 	cells = poyta.getElementsByTagName('td'); 
 	for (i = 0; i < taulukonkoko; i++) {               // numeroidaan solut
 		console.log(taulukonsisältö);
-		cells[i].innerHTML = taulukonsisältö;
-
+		if(i < len_kuvat) {
+			cells[i].innerHTML =  "<img src=" + taulukonkuvat[i] + ">";
+		}
 	}
 	document.getElementById('container').appendChild(poyta);
 }
