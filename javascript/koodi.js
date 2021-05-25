@@ -42,7 +42,11 @@ function kuvat() {
 
 	var poyta = document.createElement('table'),
     	tr = document.createElement('tr'),
+		img = document.createElement('IMG'),
     	cells, i;
+
+	img.src = taulukonkuvat;
+
  	for (i = 0; i < taulukonleveys; i++) { 
     	tr.appendChild(document.createElement('td'));
 	}
@@ -51,9 +55,8 @@ function kuvat() {
 	}
 	cells = poyta.getElementsByTagName('td'); 
 	for (i = 0; i < taulukonkoko; i++) {               // numeroidaan solut
-		console.log(taulukonsisältö);
 		if(i < len_kuvat) {
-			cells[i].innerHTML =  "<img src=" + taulukonkuvat[i] + ">";
+			cells[i].innerHTML =  document.body.appendChild(img)
 		}
 	}
 	document.getElementById('container').appendChild(poyta);
